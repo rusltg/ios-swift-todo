@@ -10,10 +10,19 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
 
+    @IBOutlet weak var notificationSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        notificationSwitch.isOn = Model.isNotification
     }
 
-
+    
+    // MARK: - Action
+    
+    @IBAction func notificationChange(_ sender: Any) {
+        Model.isNotification = (sender as! UISwitch).isOn
+    }
+    
 }

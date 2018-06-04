@@ -10,75 +10,81 @@ import UIKit
 
 class TasksTableViewController: UITableViewController {
 
+    var tasks: [Task] = []
+    var completedTasks: [Task] = []
+    var selectedTask: Task!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
-    // MARK: - Table view data source
+        update()
+    }
+    
+    
+    // MARK: - Action
+    
+    func update() {
+        tasks = Model.tasks()
+        completedTasks = Model.tasks(isComplete: true)
+        tableView.reloadData()
+    }
+    
+    
+    // MARK: - Table
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return 1 + (completedTasks.count > 0 ? 1 : 0)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return section == 0 ? tasks.count : completedTasks.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as! TaskCell
+        cell.prepare(task: indexPath.section == 0 ? tasks[indexPath.row] : completedTasks[indexPath.row])
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? nil : " Completed"
+    }
 
-    /*
-    // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
 
-    /*
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            if indexPath.section == 0 {
+                Model.remove(task: tasks[indexPath.row])
+                tasks.remove(at: indexPath.row)
+            } else {
+                Model.remove(task: completedTasks[indexPath.row])
+                completedTasks.remove(at: indexPath.row)
+            }
+            tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            tableView.endUpdates()
+        }
     }
-    */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedTask = indexPath.section == 0 ? tasks[indexPath.row] : completedTasks[indexPath.row]
+        performSegue(withIdentifier: "Change", sender: nil)
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    // MARK: - Segue
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "Change" {
+            (segue.destination as! DetailTableViewController).task = selectedTask
+        }
     }
-    */
 
 }
