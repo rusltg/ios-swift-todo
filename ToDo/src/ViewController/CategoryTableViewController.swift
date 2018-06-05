@@ -37,7 +37,7 @@ class CategoryTableViewController: UITableViewController {
     @IBAction func add(_ sender: Any) {
         nameTextField.text = nameTextField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
         if nameTextField.text!.count > 0 {
-            Model.add(category: Category(name: nameTextField.text!, color: selectedColor))
+            Model.addCategory(name: nameTextField.text!, color: selectedColor)
             self.navigationController?.popViewController(animated: true)
         }
     }

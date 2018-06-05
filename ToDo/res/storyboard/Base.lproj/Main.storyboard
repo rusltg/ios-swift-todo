@@ -35,32 +35,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TitleCell" id="8Nd-uJ-LHd" customClass="TitleCell" customModule="ToDo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Nd-uJ-LHd" id="jbR-10-LKe">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysW-U9-abS">
-                                            <rect key="frame" x="16" y="11" width="343" height="33"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="ysW-U9-abS" firstAttribute="top" secondItem="jbR-10-LKe" secondAttribute="top" constant="11" id="2Ig-aB-bWn"/>
-                                        <constraint firstAttribute="bottom" secondItem="ysW-U9-abS" secondAttribute="bottom" constant="-0.5" id="C5b-zr-IRo"/>
-                                        <constraint firstItem="ysW-U9-abS" firstAttribute="leading" secondItem="jbR-10-LKe" secondAttribute="leading" constant="16" id="hDY-dU-V6t"/>
-                                        <constraint firstAttribute="trailing" secondItem="ysW-U9-abS" secondAttribute="trailing" constant="16" id="qPi-Yp-bNP"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.95516183035714286" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="nameLabel" destination="ysW-U9-abS" id="hUl-dh-vc8"/>
-                                </connections>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="89" id="wgq-M9-KaE" customClass="TaskCell" customModule="ToDo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="99.5" width="375" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -77,8 +51,21 @@
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUD-6U-Ojb">
                                             <rect key="frame" x="38" y="29" width="30" height="30"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5A3-v5-0Bq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <connections>
+                                                        <action selector="complete:" destination="wgq-M9-KaE" eventType="touchUpInside" id="SFQ-OM-qiW"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="5A3-v5-0Bq" firstAttribute="top" secondItem="bUD-6U-Ojb" secondAttribute="top" id="Cca-IC-p5h"/>
+                                                <constraint firstItem="5A3-v5-0Bq" firstAttribute="leading" secondItem="bUD-6U-Ojb" secondAttribute="leading" id="FoG-m9-pos"/>
+                                                <constraint firstAttribute="bottom" secondItem="5A3-v5-0Bq" secondAttribute="bottom" id="V4Y-wt-ftn"/>
+                                                <constraint firstAttribute="trailing" secondItem="5A3-v5-0Bq" secondAttribute="trailing" id="Ys9-PA-D4h"/>
                                                 <constraint firstAttribute="width" constant="30" id="fHU-Jz-Uoj"/>
                                                 <constraint firstAttribute="height" constant="30" id="rcg-g6-vhs"/>
                                             </constraints>

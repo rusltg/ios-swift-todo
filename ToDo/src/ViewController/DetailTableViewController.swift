@@ -25,8 +25,14 @@ class DetailTableViewController: UITableViewController {
         
         if task != nil {
             titleTextField.text = task!.title
-            categoryTextField.text = task!.category.name
-            dateTextField.text = task!.date.dateTime
+            categoryTextField.text = task!.category!.name
+            dateTextField.text = task!.date!.dateTime
+            
+            if task!.isComplete {
+                titleTextField.isEnabled = false
+                categoryTextField.isEnabled = false
+                dateTextField.isEnabled = false
+            }
         }
         
         let datePicker = UIDatePicker()
@@ -57,7 +63,7 @@ class DetailTableViewController: UITableViewController {
             } else {
                 if category != nil
                     && date != nil {
-                    Model.add(task: Task(category: category!, title: titleTextField.text!, date: date!, isComplete: false))
+                    Model.addTask(category: category!, title: titleTextField.text!, date: date!, isComplete: false)
                     self.navigationController?.popViewController(animated: true)
                 }
             }

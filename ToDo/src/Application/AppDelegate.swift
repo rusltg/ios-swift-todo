@@ -17,6 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        if UserDefaults.standard.bool(forKey: "init") {
+            let context = persistentContainer.viewContext
+
+            let category1 = Category(context: context)
+            category1.name = "first"
+            category1.color = Model.colors[0]
+            
+            let category2 = Category(context: context)
+            category2.name = "second"
+            category2.color = Model.colors[1]
+
+            saveContext()
+            
+            UserDefaults.standard.set(true, forKey: "init")
+        }
+
         return true
     }
 

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5E41458420C438D700AB36D7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E41458320C438D700AB36D7 /* Model.swift */; };
-		5E4B742220C44641000E8B43 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B742120C44641000E8B43 /* Category.swift */; };
-		5E4B742420C4464E000E8B43 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B742320C4464E000E8B43 /* Task.swift */; };
 		5E4B742720C44F0A000E8B43 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B742620C44F0A000E8B43 /* UIColor.swift */; };
 		5EEBB9FD20C4E17300E908DB /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEBB9FC20C4E17300E908DB /* Format.swift */; };
 		5EF8237A20C2BEE200F5D8A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF8237920C2BEE200F5D8A7 /* AppDelegate.swift */; };
@@ -17,7 +15,6 @@
 		5EF8238220C2BEE200F5D8A7 /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5EF8238020C2BEE200F5D8A7 /* ToDo.xcdatamodeld */; };
 		5EF8238420C2BEE400F5D8A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EF8238320C2BEE400F5D8A7 /* Assets.xcassets */; };
 		5EF8238720C2BEE400F5D8A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF8238520C2BEE400F5D8A7 /* LaunchScreen.storyboard */; };
-		5EF8239920C30A4B00F5D8A7 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF8239820C30A4B00F5D8A7 /* TitleCell.swift */; };
 		5EF8239B20C30A6200F5D8A7 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF8239A20C30A6200F5D8A7 /* TaskCell.swift */; };
 		5EF8239D20C30E7E00F5D8A7 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF8239C20C30E7E00F5D8A7 /* TasksTableViewController.swift */; };
 		5EF8239F20C30E8A00F5D8A7 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF8239E20C30E8A00F5D8A7 /* DetailTableViewController.swift */; };
@@ -27,8 +24,6 @@
 
 /* Begin PBXFileReference section */
 		5E41458320C438D700AB36D7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		5E4B742120C44641000E8B43 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		5E4B742320C4464E000E8B43 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		5E4B742620C44F0A000E8B43 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5EEBB9FC20C4E17300E908DB /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
 		5EF8237620C2BEE200F5D8A7 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,7 +33,6 @@
 		5EF8238320C2BEE400F5D8A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EF8238620C2BEE400F5D8A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EF8238820C2BEE400F5D8A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5EF8239820C30A4B00F5D8A7 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		5EF8239A20C30A6200F5D8A7 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		5EF8239C20C30E7E00F5D8A7 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 		5EF8239E20C30E8A00F5D8A7 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
@@ -63,15 +57,6 @@
 				5E41458320C438D700AB36D7 /* Model.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		5E4B742020C4462D000E8B43 /* Object */ = {
-			isa = PBXGroup;
-			children = (
-				5E4B742120C44641000E8B43 /* Category.swift */,
-				5E4B742320C4464E000E8B43 /* Task.swift */,
-			);
-			path = Object;
 			sourceTree = "<group>";
 		};
 		5E4B742520C44EFD000E8B43 /* Extension */ = {
@@ -112,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				5E4B742520C44EFD000E8B43 /* Extension */,
-				5E4B742020C4462D000E8B43 /* Object */,
 				5E41458220C438C400AB36D7 /* Model */,
 				5EF8239620C30A2A00F5D8A7 /* Cell */,
 				5EF8239120C3097B00F5D8A7 /* ViewController */,
@@ -187,7 +171,6 @@
 		5EF8239620C30A2A00F5D8A7 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				5EF8239820C30A4B00F5D8A7 /* TitleCell.swift */,
 				5EF8239A20C30A6200F5D8A7 /* TaskCell.swift */,
 			);
 			path = Cell;
@@ -269,10 +252,7 @@
 				5EEBB9FD20C4E17300E908DB /* Format.swift in Sources */,
 				5EF8239F20C30E8A00F5D8A7 /* DetailTableViewController.swift in Sources */,
 				5EF8239D20C30E7E00F5D8A7 /* TasksTableViewController.swift in Sources */,
-				5E4B742220C44641000E8B43 /* Category.swift in Sources */,
-				5EF8239920C30A4B00F5D8A7 /* TitleCell.swift in Sources */,
 				5EF823A320C311DB00F5D8A7 /* CategoryTableViewController.swift in Sources */,
-				5E4B742420C4464E000E8B43 /* Task.swift in Sources */,
 				5EF823A120C30E9200F5D8A7 /* SettingsTableViewController.swift in Sources */,
 				5EF8238220C2BEE200F5D8A7 /* ToDo.xcdatamodeld in Sources */,
 				5EF8239B20C30A6200F5D8A7 /* TaskCell.swift in Sources */,
@@ -421,7 +401,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8GMKJ22TF9;
 				INFOPLIST_FILE = ToDo/res/list/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -440,7 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8GMKJ22TF9;
 				INFOPLIST_FILE = ToDo/res/list/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
